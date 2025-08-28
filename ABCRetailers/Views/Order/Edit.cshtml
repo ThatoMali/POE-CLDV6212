@@ -1,0 +1,67 @@
+@model ABCRetailers.Models.ViewModels.OrderCreateViewModel
+@{ var rowKey = (string)ViewBag.RowKey; }
+<h2 class="mb-3">Edit Order</h2>
+<form method="post" class="card p-3" asp-action="Edit" asp-route-id="@rowKey">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Customer</label>
+            <select asp-for="CustomerId" asp-items="Model.Customers" class="form-select"></select>
+            <span asp-validation-for="CustomerId" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Product</label>
+            <select asp-for="ProductId" asp-items="Model.Products" class="form-select" id="productSelect"></select>
+            <span asp-validation-for="ProductId" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Quantity" class="form-label"></label>
+            <input asp-for="Quantity" class="form-control" id="qty" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="UnitPrice" class="form-label"></label>
+            <input asp-for="UnitPrice" class="form-control" id="unitPrice" readonly />
+        </div>
+        <div class="col-md-4">
+            <label asp-for="TotalPrice" class="form-label"></label>
+            <input asp-for="TotalPrice" class="form-control" id="totalPrice" readonly />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="OrderDate" class="form-label"></label>
+            <input asp-for="OrderDate" class="form-control" type="date" />
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Status" class="form-label"></label>
+            <select asp-for="Status" class="form-select">
+                <option>Pending</option>
+                <option>Paid</option>
+                <option>Shipped</option>
+                <option>Delivered</option>
+                <option>Cancelled</option>
+            </select>
+        </div>
+    </div>
+    <div class="d-flex gap-2 mt-3">
+        <button class="btn btn-primary">Save</button>
+        <a class="btn btn-outline-secondary" href="/Order">Cancel</a>
+    </div>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        async function recalc() {
+            const productId = document.getElementById('productSelect').value;
+            if (productId) {
+                const res = await fetch('/Order/ProductInfo/' + productId);
+                const j = await res.json();
+                const price = parseFloat(j.price);
+                const qty = parseInt(document.getElementById('qty').value || '1');
+                document.getElementById('unitPrice').value = price.toFixed(2);
+                document.getElementById('totalPrice').value = (price * qty).toFixed(2);
+            }
+        }
+        document.getElementById('productSelect').addEventListener('change', recalc);
+        document.getElementById('qty').addEventListener('input', recalc);
+        recalc();
+    </script>
+}

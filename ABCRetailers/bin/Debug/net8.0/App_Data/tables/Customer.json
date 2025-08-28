@@ -1,0 +1,62 @@
+[
+  {
+    "PartitionKey": "Customer",
+    "RowKey": "f8d5368a-7d9d-48be-9ec0-62f65b365aef",
+    "Timestamp": "2025-08-27T19:35:08.9401934+00:00",
+    "ETag": null,
+    "CustomerId": "",
+    "Name": "MONERI ",
+    "Surname": "MALI",
+    "Username": "MO MALI ",
+    "Email": "MONERIMALI@GMAIL.COM",
+    "ShippingAddress": "42 Sunset Drive, Glenwood, Durban"
+  },
+  {
+    "PartitionKey": "Customer",
+    "RowKey": "2aaa5174-f499-4738-9744-10800a5778ad",
+    "Timestamp": "2025-08-27T19:36:31.6091183+00:00",
+    "ETag": null,
+    "CustomerId": "",
+    "Name": "Josh ",
+    "Surname": "Gombele",
+    "Username": "Jgoms",
+    "Email": "jgoms@gmail.com",
+    "ShippingAddress": "17 Olive Grove Street, Newlands, Cape Town"
+  },
+  {
+    "PartitionKey": "Customer",
+    "RowKey": "36273211-5426-4e6c-83a5-35581b7272ce",
+    "Timestamp": "2025-08-27T19:37:55.7842673+00:00",
+    "ETag": null,
+    "CustomerId": "",
+    "Name": "Thando",
+    "Surname": "Futwa",
+    "Username": "TFutwa",
+    "Email": "tfutwa@gmail.com",
+    "ShippingAddress": "89 Acacia Avenue, Sunnyside, Pretoria"
+  },
+  {
+    "PartitionKey": "Customer",
+    "RowKey": "3af6e18e-12ad-48da-9c56-af5a8f23bd6c",
+    "Timestamp": "2025-08-27T19:39:27.2033135+00:00",
+    "ETag": null,
+    "CustomerId": "",
+    "Name": "Simphiwe ",
+    "Surname": "Mathenjwa",
+    "Username": "Sthenjwa",
+    "Email": "sthenjwa@gmail.com",
+    "ShippingAddress": "254 Mango Crescent, Umhlanga Rocks, Durban,"
+  },
+  {
+    "PartitionKey": "Customer",
+    "RowKey": "d99c682d-6ea5-4752-89dd-cb5e176d7413",
+    "Timestamp": "2025-08-27T19:41:05.2485401+00:00",
+    "ETag": null,
+    "CustomerId": "",
+    "Name": "Omphile ",
+    "Surname": "Miller",
+    "Username": "Omiller ",
+    "Email": "omliier@gmail.com",
+    "ShippingAddress": "63 Protea Lane, Bloemfontein Central, Bloemfontein"
+  }
+]

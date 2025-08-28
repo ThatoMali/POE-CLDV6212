@@ -1,0 +1,74 @@
+[
+  {
+    "PartitionKey": "Product",
+    "RowKey": "e025ba34-8b67-49e6-a659-5f95b5b92c10",
+    "Timestamp": "2025-08-27T19:17:49.5928193+00:00",
+    "ETag": null,
+    "ProductId": "",
+    "ProductName": "Ghost of Yotei ",
+    "Description": "A ps5 game ",
+    "Price": 1499,
+    "StockAvailable": 15,
+    "ImageUrl": "/media/b8f0cbbb8c964987af3b2cc6993a45ef_ghost.jpg"
+  },
+  {
+    "PartitionKey": "Product",
+    "RowKey": "33ceab6f-f170-4399-a473-10edfacd7330",
+    "Timestamp": "2025-08-27T19:21:13.8059959+00:00",
+    "ETag": null,
+    "ProductId": "",
+    "ProductName": "NBA 2k26",
+    "Description": "console game ",
+    "Price": 1899,
+    "StockAvailable": 12,
+    "ImageUrl": "/media/06d828e2a80341e1b12f5c329daaa27f_2k26.jpg"
+  },
+  {
+    "PartitionKey": "Product",
+    "RowKey": "d802e3ed-b23f-41a3-9981-749de891736f",
+    "Timestamp": "2025-08-27T19:25:14.8562853+00:00",
+    "ETag": null,
+    "ProductId": "",
+    "ProductName": "EA FC 26 Ultimate Edition",
+    "Description": "console game ",
+    "Price": 1709,
+    "StockAvailable": 8,
+    "ImageUrl": "/media/6903ffe517714d189ab4290c4df5ca69_fc 26b.jpg"
+  },
+  {
+    "PartitionKey": "Product",
+    "RowKey": "b1e8fb81-d2df-459c-bffe-3600bd77176a",
+    "Timestamp": "2025-08-27T19:31:15.3416758+00:00",
+    "ETag": null,
+    "ProductId": "",
+    "ProductName": "Battlefield 6 ",
+    "Description": "console game",
+    "Price": 1169,
+    "StockAvailable": 15,
+    "ImageUrl": "/media/4846a594b6994ea19d6cff89a2aeadeb_battlefield 6.jpg"
+  },
+  {
+    "PartitionKey": "Product",
+    "RowKey": "3fca47a2-9e5e-442c-a277-89ef2a1c224c",
+    "Timestamp": "2025-08-27T19:32:03.4297618+00:00",
+    "ETag": null,
+    "ProductId": "",
+    "ProductName": "Little Nightmares 3 ",
+    "Description": "console game ",
+    "Price": 749,
+    "StockAvailable": 14,
+    "ImageUrl": "/media/3425e1c3395f4e3dac9d72defa6258ff_nightmares.jpg"
+  },
+  {
+    "PartitionKey": "Product",
+    "RowKey": "8d013753-a268-46fc-b74f-b5c4a0dfec68",
+    "Timestamp": "2025-08-27T19:33:09.8399848+00:00",
+    "ETag": null,
+    "ProductId": "",
+    "ProductName": "Borderlands 4 ",
+    "Description": "Console Game ",
+    "Price": 1499,
+    "StockAvailable": 20,
+    "ImageUrl": "/media/3b443452408e40ca9e171e7bc485bdae_Boderlands.jpg"
+  }
+]

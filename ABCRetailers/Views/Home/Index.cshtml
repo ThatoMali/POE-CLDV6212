@@ -1,0 +1,107 @@
+@using ABCREtailers.ViewModels
+@using ABCRetailers.Models
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card bg-gradient-primary text-white">
+            <div class="card-body">
+                <h1 class="display-4 fw-bold">Welcome to ABC Retailers</h1>
+                <p class="lead">Manage your customers, products, and orders with ease</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="dashboard-card card-customers fade-in">
+            <i class="fas fa-users text-primary"></i>
+            <h3>@Model.CustomerCount</h3>
+            <p class="text-muted">Total Customers</p>
+            <a asp-controller="Customer" asp-action="Index" class="btn btn-outline-primary btn-sm">View All</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dashboard-card card-products fade-in">
+            <i class="fas fa-box text-success"></i>
+            <h3>@Model.ProductCount</h3>
+            <p class="text-muted">Total Products</p>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-success btn-sm">View All</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dashboard-card card-orders fade-in">
+            <i class="fas fa-shopping-cart text-danger"></i>
+            <h3>@Model.OrderCount</h3>
+            <p class="text-muted">Total Orders</p>
+            <a asp-controller="Order" asp-action="Index" class="btn btn-outline-danger btn-sm">View All</a>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Products -->
+<div class="row">
+    <div class="col-12">
+        <div class="card fade-in">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-star me-2"></i>Featured Products</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.FeaturedProducts.Any())
+                {
+                    <div class="row">
+                        @foreach (var product in Model.FeaturedProducts)
+                        {
+                            <div class="col-md-4 mb-3">
+                                <div class="card featured-product h-100">
+                                    @if (!string.IsNullOrEmpty(product.ImageUrl))
+                                    {
+                                        <img src="@product.ImageUrl" class="card-img-top" alt="@product.ProductName">
+                                    }
+                                    <div class="card-body">
+                                        <h5 class="card-title">@product.ProductName</h5>
+                                        <p class="card-text text-muted">@product.Description.Truncate(100)</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="h5 text-primary mb-0">$@product.Price.ToString("N2")</span>
+                                            <span class="@GetStockClass(product.StockAvailable)">
+                                                @product.StockAvailable in stock
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-4">
+                        <i class="fas fa-box-open fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">No featured products available</p>
+                        <a asp-controller="Product" asp-action="Create" class="btn btn-primary">Add First Product</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    public string GetStockClass(int stock)
+    {
+        if (stock == 0) return "stock-low";
+        if (stock <= 10) return "stock-medium";
+        return "stock-high";
+    }
+}
+
+@section Scripts {
+    <script>
+        // Add any dashboard-specific JavaScript here
+    </script>
+}

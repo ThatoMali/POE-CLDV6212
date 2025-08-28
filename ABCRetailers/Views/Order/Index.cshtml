@@ -1,0 +1,41 @@
+@model List<ABCRetailers.Models.Order>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Orders</h2>
+    <a class="btn btn-primary" href="/Order/Create">New Order</a>
+</div>
+<div class="card">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th class="text-end">Total</th>
+                    <th>Status</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var o in Model)
+            {
+                <tr>
+                    <td>@o.OrderId</td>
+                    <td>@o.Username</td>
+                    <td>@o.ProductName (x@o.Quantity)</td>
+                    <td>@o.OrderDate.ToString("yyyy-MM-dd")</td>
+                    <td class="text-end">R @o.TotalPrice</td>
+                    <td>@o.Status</td>
+                    <td class="text-end">
+                        <a class="btn btn-sm btn-outline-secondary" href="/Order/Edit/@o.RowKey">Edit</a>
+                        <form method="post" action="/Order/Delete/@o.RowKey" class="d-inline" onsubmit="return confirm('Delete this order?');">
+                            <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
